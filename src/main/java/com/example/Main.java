@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Random;
+
 public class Main {
 
   public static void main(String[] args) {
@@ -14,6 +16,19 @@ public class Main {
       }
     };
     greeting2.sayHello();
+
+    Greeting greeting3 = () -> System.out.println("Hello World");
+    greeting3.sayHello();
+
+    Calculator calculator = (a, b) -> {
+      Random random = new Random();
+      int r = random.nextInt(10);
+      System.out.println("r = " + r);
+      return r + (a * b);
+    };
+
+    System.out.println(calculator.calculate(2, 4));
+
 
   }
 
